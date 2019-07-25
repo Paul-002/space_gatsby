@@ -1,25 +1,22 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
-import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
-import InboxIcon from "@material-ui/icons/MoveToInbox"
-import MailIcon from "@material-ui/icons/Mail"
+import NavLink from "./navLink"
+import { withStyles, MenuList } from "@material-ui/core"
 
-const useStyles = makeStyles({
+const styles = () => ({
   list: {
+    display: "flex",
     width: 250,
   },
-  fullList: {
-    width: "auto",
+  styledLink: {
+    margin: "20px",
+    width: "210px",
+    borderRadius: "5px",
   },
 })
 
 const SideDrawer = props => {
-  const classes = useStyles()
+  const { classes } = props
 
   const sideList = () => (
     <div
@@ -27,27 +24,9 @@ const SideDrawer = props => {
       role="presentation"
       onClick={props.hideDrawerHandler}
     >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <MenuList>
+        <NavLink customStyle={classes.styledLink} />
+      </MenuList>
     </div>
   )
 
@@ -60,4 +39,4 @@ const SideDrawer = props => {
   )
 }
 
-export default SideDrawer
+export default withStyles(styles)(SideDrawer)

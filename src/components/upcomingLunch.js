@@ -1,9 +1,10 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { Typography, Paper } from "@material-ui/core"
-import CardMedia from "@material-ui/core/CardMedia"
+import { Typography, Paper, Box } from "@material-ui/core"
 import { withStyles } from "@material-ui/core/styles"
-import img from "../images/img.png"
+import Img from "gatsby-image"
+import Timer from "../components/timer"
+import CountDownComponent from "./countdownComponent"
 
 const StyledPaper = withStyles({
   root: {
@@ -12,18 +13,18 @@ const StyledPaper = withStyles({
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "100px",
+    marginTop: "50px",
     width: "80%",
     margin: "0 auto",
   },
 })(Paper)
 
-const Image = withStyles({
+const BoxImage = withStyles({
   root: {
     height: "220px",
     width: "220px",
   },
-})(CardMedia)
+})(Box)
 
 const UpcomingLaunch = () => (
   <StaticQuery
@@ -31,6 +32,7 @@ const UpcomingLaunch = () => (
       query {
         space_gatsby {
           launchNext {
+            launch_date_unix
             mission_name
             rocket {
               second_stage {
@@ -41,7 +43,7 @@ const UpcomingLaunch = () => (
               }
               first_stage {
                 cores {
-                  landing_type
+                  landing_vehicle
                 }
               }
               rocket_name
@@ -52,25 +54,62 @@ const UpcomingLaunch = () => (
             }
           }
         }
+        file(relativePath: { eq: "img.png" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `}
     render={({
+      file,
       space_gatsby: {
         launchNext,
-        launchNext: { rocket },
+        launchNext: { rocket, launch_date_unix },
         launchNext: {
-          rocket: { second_stage, first_stage },
+          rocket: {
+            second_stage,
+            first_stage: { cores },
+          },
+          rocket: {
+            second_stage: { payloads },
+          },
         },
       },
     }) => (
       <StyledPaper>
+        {console.log(launchNext)}
         <Typography variant="h4">Upcoming mission</Typography>
         <Typography variant="h5">{launchNext.mission_name}</Typography>
-        <Image image={img} title="Mission logo" />
+        <BoxImage>
+          <Img fluid={file.childImageSharp.fluid} alt="Mission patch" />
+        </BoxImage>
         <Typography variant="h6">Mission details</Typography>
-        <Typography>CountDown timer {launchNext.launch_date_unix}</Typography>
-        <Typography>{`Rocket type: ${rocket.rocket_name} ${rocket.rocket_type} block ${rocket.second_stage.block}`}</Typography>
+        <Box>
+          <CountDownComponent unix={launch_date_unix}></CountDownComponent>
+        </Box>
+        <Typography>
+          Launch date: <Timer date unix={launch_date_unix} />
+        </Typography>
+        <Typography>
+          Launch time: <Timer unix={launch_date_unix} />
+        </Typography>
         <Typography>Launch site: {launchNext.launch_site.site_name}</Typography>
+        <Typography>
+          Landing site:{" "}
+          {cores.map(landing_type => {
+            return landing_type[Object.keys(landing_type)]
+          })}
+        </Typography>
+        <Typography>{`Rocket type: ${rocket.rocket_name} ${rocket.rocket_type} block ${second_stage.block}`}</Typography>
+        <Typography>
+          Payload:{" "}
+          {payloads.map(payload_type => {
+            return payload_type[Object.keys(payload_type)]
+          })}
+        </Typography>
       </StyledPaper>
     )}
   />

@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -8,11 +10,8 @@ module.exports = {
     {
       resolve: "gatsby-source-graphql",
       options: {
-        // This type will contain remote schema Query type
-        typeName: "SWAPI",
-        // This is the field under which it's accessible
+        typeName: "SpaceXGraphQLAPI",
         fieldName: "space_gatsby",
-        // URL to query from
         url: "https://api.spacex.land/graphql",
       },
     },
@@ -30,11 +29,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: path.join(__dirname, `src`, `images`),
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

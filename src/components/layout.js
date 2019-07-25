@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Grid from "@material-ui/core/Grid"
-import Navbar from "./navbar"
-import SideDrawer from "./sidedrawer"
+import Navbar from "./navBar"
+import SideDrawer from "./sideDrawer"
 
 class Layout extends Component {
   state = {
@@ -14,10 +14,6 @@ class Layout extends Component {
 
   hideDrawerHandler = () => {
     this.setState({ showDrawer: false })
-  }
-
-  buttonClick = e => {
-    console.log(e)
   }
 
   render() {
