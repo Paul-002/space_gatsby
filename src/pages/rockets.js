@@ -1,69 +1,91 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Grid from "@material-ui/core/Grid"
 import Layout from "../components/layout"
-import { Typography } from "@material-ui/core"
+import { Typography, Box } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import Card from "@material-ui/core/Card"
-import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
 import { Link } from "gatsby"
 
 const useStyles = makeStyles(() => ({
-  gridBbox: {
-    width: "100%",
-  },
-  bg: {
+  background: {
     height: "300px",
   },
-  text: {
-    color: "white",
+  content: {
+    color: "#FFFFFF",
+  },
+  heading: {
+    position: "absolute",
+    color: "#FFFFFF",
+    top: "-40px",
+    left: "5px",
+    width: "300px",
   },
   card: {
-    maxWidth: "100%",
     textDecoration: "none",
+    margin: "10px",
   },
-  media: {
-    height: 140,
-  },
-  readMore: {
-    color: "white",
+  shape: {
+    position: "relative",
+    borderTop: "50px solid rgba(34,39,43,0.8)",
+    borderBottom: "solid transparent",
+    borderLeft: "5px transparent",
+    borderRight: "70px solid transparent",
+    backgroundColor: "rgba(255,255,255,0.4)",
+    height: "1px",
+    width: "25%",
   },
 }))
 
 const Rockets = () => {
   const classes = useStyles()
-  const rockets = ["falcon1", "falcon9", "falconHeavy", "bfr"]
 
   const data = useStaticQuery(graphql`
     query {
       falcon1: file(relativePath: { eq: "falcon1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1500) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
       falcon9: file(relativePath: { eq: "falcon9.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1500) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
       falconHeavy: file(relativePath: { eq: "falconHeavy.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1500) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
       bfr: file(relativePath: { eq: "bfr.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1500) {
+          fluid {
             ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      rockets: allMarkdownRemark(
+        filter: { frontmatter: { type: { in: "rocket" } } }
+      ) {
+        edges {
+          node {
+            id
+            html
+            frontmatter {
+              title
+              img
+            }
+            fields {
+              slug
+            }
           }
         }
       }
@@ -71,50 +93,39 @@ const Rockets = () => {
   `)
   return (
     <Layout>
-      {rockets.map(rocket => {
-        return (
-          // <Grid className={classes.gridBox}>
-          //   <BackgroundImage
-          //     className={classes.bg}
-          //     fluid={data[rocket].childImageSharp.fluid}
-          //   >
-          //     <Typography key={rocket} className={classes.text} variant="h2">
-          //       {rocket.toUpperCase()}
-          //     </Typography>
-          //   </BackgroundImage>
-          // </Grid>
-          <Card
-            className={classes.card}
-            component={Link}
-            to={`rockets/${rocket}`}
-          >
-            <CardActionArea>
-              <BackgroundImage
-                className={classes.bg}
-                fluid={data[rocket].childImageSharp.fluid}
-              >
-                <CardContent>
+      {data.rockets.edges.map(rocket => (
+        <Card
+          key={rocket.node.id}
+          className={classes.card}
+          component={Link}
+          to={rocket.node.fields.slug}
+        >
+          <Box boxShadow={3}>
+            <BackgroundImage
+              className={classes.background}
+              fluid={data[rocket.node.frontmatter.img].childImageSharp.fluid}
+            >
+              <CardContent>
+                <Box className={classes.shape}>
                   <Typography
-                    key={rocket}
-                    className={classes.text}
+                    className={classes.heading}
                     component="h2"
-                    variant="h3"
+                    variant="h4"
                   >
-                    {rocket.toUpperCase()}
+                    {rocket.node.frontmatter.title}
                   </Typography>
-                  <Typography
-                    className={classes.text}
-                    variant="h6"
-                    component="h6"
-                  >
-                    Click to read more ->
-                  </Typography>
-                </CardContent>
-              </BackgroundImage>
-            </CardActionArea>
-          </Card>
-        )
-      })}
+                </Box>
+                <Typography
+                  className={classes.content}
+                  variant="h6"
+                  component="h6"
+                  dangerouslySetInnerHTML={{ __html: rocket.node.html }}
+                ></Typography>
+              </CardContent>
+            </BackgroundImage>
+          </Box>
+        </Card>
+      ))}
     </Layout>
   )
 }
