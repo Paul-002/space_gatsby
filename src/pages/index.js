@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import UpcomingLaunch from "../components/upcomingLunch"
+import UpcomingLaunch from "./upcomingLunch"
 
 const IndexPage = () => {
   return (
