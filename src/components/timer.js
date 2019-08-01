@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 const Timer = props => {
   let date = new Date(props.unix * 1000)
   let hours = date.getHours()
@@ -9,3 +11,7 @@ const Timer = props => {
 }
 
 export default Timer
+
+Timer.propTypes = {
+  unix: PropTypes.number,
+}

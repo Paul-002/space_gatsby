@@ -1,5 +1,6 @@
 import Countdown from "react-countdown-now"
 import React from "react"
+import { Typography } from "@material-ui/core"
 
 const CountdownComponent = props => {
   // const calculateTime = launchTime => {
@@ -13,10 +14,10 @@ const CountdownComponent = props => {
       return <LiftOff />
     } else {
       return (
-        <h3>
-          {days} Days {hours} Hours {minutes < 10 ? `0${minutes}` : minutes}{" "}
-          Minutes {seconds < 10 ? `0${seconds}` : seconds} Seconds
-        </h3>
+        <Typography variant="h5">
+          {days}d {hours}h {minutes < 10 ? `0${minutes}` : minutes}m{" "}
+          {seconds < 10 ? `0${seconds}` : seconds}s
+        </Typography>
       )
     }
   }

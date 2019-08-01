@@ -32,7 +32,7 @@ const styles = theme => ({
     borderRadius: "5px",
     padding: theme.spacing(1),
     textDecoration: "none",
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   appBarCustomColor: {
     background: "#005288",

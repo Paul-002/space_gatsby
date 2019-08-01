@@ -1,0 +1,47 @@
+---
+title: Mission details
+---
+
+import Layout from "../components/layout.js"
+import { graphql } from "gatsby"
+import { Typography, Paper, Box } from "@material-ui/core"
+import { Grid } from "@material-ui/core"
+
+<Layout>
+  <Grid container>
+    <Grid sm={2} xs={1}></Grid>
+    <Grid sm={8} xs={10} gutterBottom>
+      <Typography gutterBottom variant="h2" />
+      <Typography gutterBottom bold variant="h3">
+        {props.pageContext.frontmatter.title.toUpperCase()}
+      </Typography>
+      <Typography gutterBottom variant="body1">
+        {props.data.space_gatsby.launchNext.details}
+      </Typography>
+      <Typography variant="caption">Note:</Typography>
+      <Typography variant="body1">
+        This is .mdx file with basic information about next flight.
+        <br />
+        If article interested you, you can read more at{" "}
+        <a href={props.data.space_gatsby.launchNext.links.reddit_campaign}>
+          Reddit campaign
+        </a>
+      </Typography>
+      <Typography gutterBottom variant="h2" />
+    </Grid>
+    <Grid sm={2} xs={1}></Grid>
+  </Grid>
+</Layout>
+
+export const pageQuery = graphql`
+  query {
+    space_gatsby {
+      launchNext {
+        details
+        links {
+          reddit_campaign
+        }
+      }
+    }
+  }
+`

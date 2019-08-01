@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Grid from "@material-ui/core/Grid"
 import Navbar from "./navBar"
 import SideDrawer from "./sideDrawer"
+import PropTypes from "prop-types"
 
 class Layout extends Component {
   state = {
@@ -31,4 +32,9 @@ class Layout extends Component {
     )
   }
 }
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+}
+
 export default Layout
