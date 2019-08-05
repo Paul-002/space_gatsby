@@ -23,6 +23,17 @@ const useStyles = makeStyles(() => ({
     textDecoration: "none",
     margin: "10px",
   },
+  shortTextContainer: {
+    backgroundColor: "rgba(34,39,43,0.8)",
+    padding: "15px",
+    margin: "30px 0",
+    minWidth: "250px",
+    borderLeft: "5px solid rgba(255,255,255,0.6)",
+    borderRadius: "2px",
+  },
+  shortText: {
+    color: "#FFFFFF",
+  },
   shape: {
     position: "relative",
     borderTop: "50px solid rgba(34,39,43,0.8)",
@@ -30,6 +41,7 @@ const useStyles = makeStyles(() => ({
     borderLeft: "5px transparent",
     borderRight: "70px solid transparent",
     backgroundColor: "rgba(255,255,255,0.4)",
+    borderRadius: "2px",
     height: "1px",
     width: "25%",
     minWidth: "200px",
@@ -51,6 +63,7 @@ const launchPads = () => {
               title
               type
               img
+              shortText
             }
             fields {
               slug
@@ -69,6 +82,7 @@ const launchPads = () => {
               title
               type
               img
+              shortText
             }
             fields {
               slug
@@ -163,12 +177,18 @@ const launchPads = () => {
                       {pad.node.frontmatter.title}
                     </Typography>
                   </Box>
-                  <Typography
-                    className={classes.content}
-                    variant="h6"
-                    component="h6"
-                    dangerouslySetInnerHTML={{ __html: pad.node.html }}
-                  ></Typography>
+                  <Box className={classes.shortTextContainer}>
+                    <Typography variant="body1" className={classes.shortText}>
+                      {pad.node.frontmatter.shortText}
+                      <Typography
+                        align="right"
+                        className={classes.shortText}
+                        variant="subtitle1"
+                      >
+                        Read More
+                      </Typography>
+                    </Typography>
+                  </Box>
                 </CardContent>
               </BackgroundImage>
             </Box>

@@ -130,7 +130,15 @@ const UpcomingLaunch = () => {
     if (block === null) {
       return rocket.rocket_name + " " + rocket.rocket_type
     } else {
-      return rocket.rocket_name + " " + rocket.rocket_type + "block" + block
+      return (
+        rocket.rocket_name +
+        " " +
+        rocket.rocket_type +
+        " " +
+        "block" +
+        " " +
+        block
+      )
     }
   }
 

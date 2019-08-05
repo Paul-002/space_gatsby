@@ -1,7 +1,7 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
-import { Typography, Box } from "@material-ui/core"
+import { Typography, Box, Grid, ButtonBase } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
@@ -10,6 +10,17 @@ import CardContent from "@material-ui/core/CardContent"
 import { Link } from "gatsby"
 
 const useStyles = makeStyles(() => ({
+  shortTextContainer: {
+    backgroundColor: "rgba(34,39,43,0.8)",
+    padding: "15px",
+    margin: "30px 0",
+    minWidth: "250px",
+    borderLeft: "5px solid rgba(255,255,255,0.6)",
+    borderRadius: "2px",
+  },
+  shortText: {
+    color: "#FFFFFF",
+  },
   background: {
     height: "300px",
   },
@@ -34,8 +45,10 @@ const useStyles = makeStyles(() => ({
     borderLeft: "5px transparent",
     borderRight: "70px solid transparent",
     backgroundColor: "rgba(255,255,255,0.4)",
+    borderRadius: "2px",
     height: "1px",
     width: "25%",
+    minWidth: "200px",
   },
 }))
 
@@ -82,6 +95,7 @@ const Rockets = () => {
             frontmatter {
               title
               img
+              shortText
             }
             fields {
               slug
@@ -114,13 +128,19 @@ const Rockets = () => {
                   >
                     {rocket.node.frontmatter.title}
                   </Typography>
+                  <Box className={classes.shortTextContainer}>
+                    <Typography variant="body1" className={classes.shortText}>
+                      {rocket.node.frontmatter.shortText}
+                      <Typography
+                        align="right"
+                        className={classes.shortText}
+                        variant="subtitle1"
+                      >
+                        Read More
+                      </Typography>
+                    </Typography>
+                  </Box>
                 </Box>
-                <Typography
-                  className={classes.content}
-                  variant="h6"
-                  component="h6"
-                  dangerouslySetInnerHTML={{ __html: rocket.node.html }}
-                ></Typography>
               </CardContent>
             </BackgroundImage>
           </Box>
