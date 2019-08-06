@@ -1,5 +1,6 @@
 import Countdown from "react-countdown-now"
 import React from "react"
+import PropTypes from "prop-types"
 import { Typography } from "@material-ui/core"
 
 const CountdownComponent = props => {
@@ -27,6 +28,10 @@ const CountdownComponent = props => {
       <LiftOff />
     </Countdown>
   )
+}
+
+CountdownComponent.propTypes = {
+  unix: PropTypes.number,
 }
 
 export default CountdownComponent

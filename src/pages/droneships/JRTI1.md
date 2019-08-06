@@ -1,8 +1,8 @@
 ---
 title: "JRTI-1"
-type: "droneship"
+type: "droneShip"
 img: "JRTI1"
-shortText: "As of December 2014, the first drone ship used, the McDonough Marine Service's _Marmac 300_ barge, was based in Jacksonville, Florida, at the northern tip of the JAXPORT Cruise Terminal (30.409144°N 81.582493°W) where SpaceX built a stand to secure the Falcon stage during post-landing operations."
+shortText: "As of December 2014, the first drone ship used, the McDonough Marine..."
 ---
 
 As of December 2014, the first drone ship used, the McDonough Marine Service's _Marmac 300_ barge, was based in Jacksonville, Florida, at the northern tip of the JAXPORT Cruise Terminal (30.409144°N 81.582493°W) where SpaceX built a stand to secure the Falcon stage during post-landing operations. The stand consists of four 15,000 lb (6,800 kg), 107 in (270 cm) tall and 96.25 in (244.5 cm) wide pedestal structures bolted to a concrete base. A mobile crane will lift the stage from the ship and place it on the stand. Tasks such as removing or folding back the landing legs prior to placing the stage in a horizontal position for trucking will occur here.[[9]](https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship#cite_note-SLC-13_Draft_EA-9)

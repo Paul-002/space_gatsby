@@ -1,8 +1,8 @@
 ---
 title: "JRTI-2"
-type: "droneship"
+type: "droneShip"
 img: "JRTI2"
-shortText: "The third ASDS barge, using the _Marmac 303_ hull, was built during 2015 in a Louisiana shipyard, and the barge transited the Panama Canal in June 2015 carrying its wing extensions as cargo on the deck because the ASDS, when complete, would be too wide to pass through the canal."
+shortText: "The third ASDS barge, using the _Marmac 303_ hull, was built during 2015 in a Louisiana shipyard..."
 ---
 
 The third ASDS barge, using the _Marmac 303_ hull, was built during 2015 in a Louisiana shipyard, and the barge transited the Panama Canal in June 2015 carrying its wing extensions as cargo on the deck because the ASDS, when complete, would be too wide to pass through the canal.[[15]](https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship#cite_note-nsf20150618-15)[[12]](https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship#cite_note-musk20150123-12)

@@ -1,8 +1,8 @@
 ---
 title: "OCISLY"
-type: "droneship"
+type: "droneShip"
 img: "OCISLY"
-shortText: "The second ASDS barge, _Of Course I Still Love You_ (_OCISLY_), had been under construction in a Louisiana shipyard since early 2015 using a different hull—_Marmac 304_—in order to service launches on the east coast."
+shortText: "The second ASDS barge, _Of Course I Still Love You_ (_OCISLY_), had been under construction in..."
 ---
 
 The second ASDS barge, _Of Course I Still Love You_ (_OCISLY_), had been under construction in a Louisiana shipyard since early 2015 using a different hull—_Marmac 304_—in order to service launches on the east coast. It was built as a replacement for the first _Just Read the Instructions_ and entered operational service for Falcon 9 Flight 19 in late June 2015. As of June 2015, its home port was Jacksonville, Florida,[[12]](https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship#cite_note-musk20150123-12)[[15]](https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship#cite_note-nsf20150618-15) but after December 2015, it was transferred 160 miles (260 km) further south, at Port Canaveral.

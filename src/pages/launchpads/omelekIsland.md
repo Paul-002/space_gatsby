@@ -1,6 +1,6 @@
 ---
 title: "Omelek Island"
-type: "launchpad"
+type: "launchPad"
 img: "omelekIslands"
 shortText: "SpaceX originally intended to launch their first launch vehicle, the Falcon 1, from Space Launch Complex 3 West (SLC-3W) at Vandenberg Air Force Base."
 ---

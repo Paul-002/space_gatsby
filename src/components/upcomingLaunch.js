@@ -4,7 +4,7 @@ import { Typography, Paper, Box, Button } from "@material-ui/core"
 import { withStyles, makeStyles } from "@material-ui/core/styles"
 import Img from "gatsby-image"
 import Timer from "./timer"
-import CountDownComponent from "./countdownComponent"
+import CountdownComponent from "./countdownComponent"
 
 const useStyles = makeStyles(() => ({
   shape: {
@@ -46,10 +46,8 @@ const StyledBoxContainer = withStyles({
   root: {
     display: "flex",
     justifyContent: "center",
-    flexDirection: "row",
     flexWrap: "wrap",
     marginTop: "40px",
-    // border: "2px solid blue",
   },
 })(Box)
 
@@ -58,7 +56,6 @@ const ImageBox = withStyles({
     height: "300px",
     width: "300px",
     padding: "20px",
-    // border: "2px solid black",
   },
 })(Box)
 
@@ -66,12 +63,11 @@ const InfoBox = withStyles({
   root: {
     display: "flex",
     flexDirection: "column",
-    // border: "2px solid red",
     padding: "5px",
   },
 })(Box)
 
-const TypographyBody1 = withStyles({
+const TypographyBody = withStyles({
   root: {
     marginBottom: "5px",
   },
@@ -80,28 +76,22 @@ const TypographyBody1 = withStyles({
 const MissionDetailsContainer = withStyles({
   root: {
     display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
-    // border: "2px solid yellow",
   },
 })(Box)
 
 const LeftContainer = withStyles({
   root: {
-    // border: "2px solid grey",
     marginRight: "10px",
   },
 })(Box)
 
 const RightContainer = withStyles({
-  root: {
-    // border: "2px solid pink",
-  },
+  root: {},
 })(Box)
 
-const DetailText = withStyles({
+const TextDetail = withStyles({
   root: {
-    // textAlign: "right",
     fontWeight: "bold",
     marginBottom: "5px",
   },
@@ -122,23 +112,15 @@ const UpcomingLaunch = () => {
     return cores.map(landing_type => {
       return landing_type[Object.keys(landing_type)] !== null
         ? landing_type[Object.keys(landing_type)]
-        : "No info"
+        : "No landing"
     })
   }
 
   const rocketInfo = block => {
     if (block === null) {
-      return rocket.rocket_name + " " + rocket.rocket_type
+      return `${rocket.rocket_name} ${rocket.rocket_type}`
     } else {
-      return (
-        rocket.rocket_name +
-        " " +
-        rocket.rocket_type +
-        " " +
-        "block" +
-        " " +
-        block
-      )
+      return `${rocket.rocket_name} ${rocket.rocket_type} block ${block}`
     }
   }
 
@@ -184,7 +166,9 @@ const UpcomingLaunch = () => {
     }
   `)
   const {
-    file,
+    file: {
+      childImageSharp: { fluid },
+    },
     space_gatsby: {
       launchNext: { rocket, launch_date_unix, mission_name },
       launchNext: {
@@ -223,33 +207,33 @@ const UpcomingLaunch = () => {
           </Button>
           <MissionDetailsContainer>
             <LeftContainer>
-              <DetailText>Launch date</DetailText>
-              <DetailText>Launch time</DetailText>
-              <DetailText>Launch site</DetailText>
-              <DetailText>Landing site</DetailText>
-              <DetailText>Rocket type</DetailText>
-              <DetailText>Payload</DetailText>
+              <TextDetail>Launch date</TextDetail>
+              <TextDetail>Launch time</TextDetail>
+              <TextDetail>Launch site</TextDetail>
+              <TextDetail>Landing site</TextDetail>
+              <TextDetail>Rocket type</TextDetail>
+              <TextDetail>Payload</TextDetail>
             </LeftContainer>
             <RightContainer>
-              <TypographyBody1 variant="body1">
+              <TypographyBody variant="body1">
                 <Timer date unix={launch_date_unix} />
-              </TypographyBody1>
-              <TypographyBody1 variant="body1">
+              </TypographyBody>
+              <TypographyBody variant="body1">
                 <Timer unix={launch_date_unix} />
-              </TypographyBody1>
-              <TypographyBody1 variant="body1">{site_name}</TypographyBody1>
-              <TypographyBody1 variant="body1">{landingSite()}</TypographyBody1>
-              <TypographyBody1>{rocketInfo(block)}</TypographyBody1>
-              <TypographyBody1>{rocketPayload()}</TypographyBody1>
+              </TypographyBody>
+              <TypographyBody variant="body1">{site_name}</TypographyBody>
+              <TypographyBody variant="body1">{landingSite()}</TypographyBody>
+              <TypographyBody>{rocketInfo(block)}</TypographyBody>
+              <TypographyBody>{rocketPayload()}</TypographyBody>
             </RightContainer>
           </MissionDetailsContainer>
         </InfoBox>
         <ImageBox>
-          <Img fluid={file.childImageSharp.fluid} alt="Mission patch" />
+          <Img fluid={fluid} alt="Mission patch" />
         </ImageBox>
       </StyledBoxContainer>
       <TimerBox>
-        <CountDownComponent unix={launch_date_unix}></CountDownComponent>
+        <CountdownComponent unix={launch_date_unix}></CountdownComponent>
       </TimerBox>
     </StyledPaperContainer>
   )

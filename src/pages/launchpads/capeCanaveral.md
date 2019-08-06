@@ -1,8 +1,8 @@
 ---
 title: "Cape Canaveral SLC-40"
-type: "launchpad"
+type: "launchPad"
 img: "capeCanaveral"
-shortText: "In 2007, the US Air Force leased Cape Canaveral SLC-40 to SpaceX to launch the Falcon 9 rocket. During April 2008, construction started on the ground facilities necessary to support the launch of the SpaceX Falcon 9 rocket."
+shortText: "In 2007, the US Air Force leased Cape Canaveral SLC-40 to SpaceX to launch the Falcon 9 rocket. During April 2008, construction..."
 ---
 
 In 2007, the US Air Force leased Cape Canaveral SLC-40 to SpaceX to launch the Falcon 9 rocket.[[8]](https://en.wikipedia.org/wiki/SpaceX_launch_facilities#cite_note-FloridaToday-8) During April 2008, construction started on the ground facilities necessary to support the launch of the SpaceX Falcon 9 rocket. Renovations included installation of new liquid oxygen and kerosene tanks and construction of a hangar for rocket and payload preparation.

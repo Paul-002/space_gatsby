@@ -3,57 +3,13 @@ import Layout from "../components/layout"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { Box, Card, CardContent, Typography } from "@material-ui/core"
 import BackgroundImage from "gatsby-background-image"
-import { makeStyles } from "@material-ui/styles"
-
-const useStyles = makeStyles(() => ({
-  background: {
-    height: "300px",
-  },
-  content: {
-    color: "#FFFFFF",
-  },
-  heading: {
-    position: "absolute",
-    color: "#FFFFFF",
-    top: "-40px",
-    left: "5px",
-    width: "500px",
-  },
-  card: {
-    textDecoration: "none",
-    margin: "10px",
-  },
-  shortTextContainer: {
-    backgroundColor: "rgba(34,39,43,0.8)",
-    padding: "15px",
-    margin: "30px 0",
-    minWidth: "250px",
-    borderLeft: "5px solid rgba(255,255,255,0.6)",
-    borderRadius: "2px",
-  },
-  shortText: {
-    color: "#FFFFFF",
-  },
-  shape: {
-    position: "relative",
-    borderTop: "50px solid rgba(34,39,43,0.8)",
-    borderBottom: "solid transparent",
-    borderLeft: "5px transparent",
-    borderRight: "70px solid transparent",
-    backgroundColor: "rgba(255,255,255,0.4)",
-    borderRadius: "2px",
-    height: "1px",
-    width: "25%",
-    minWidth: "200px",
-  },
-}))
+import classes from "../styles/contentBox.module.css"
 
 const launchPads = () => {
-  const classes = useStyles()
   const data = useStaticQuery(graphql`
     query MyQuery {
       droneships: allMarkdownRemark(
-        filter: { frontmatter: { type: { in: "droneship" } } }
+        filter: { frontmatter: { type: { in: "droneShip" } } }
       ) {
         edges {
           node {
@@ -72,7 +28,7 @@ const launchPads = () => {
         }
       }
       launchpads: allMarkdownRemark(
-        filter: { frontmatter: { type: { in: "launchpad" } } }
+        filter: { frontmatter: { type: { in: "launchPad" } } }
       ) {
         edges {
           node {
@@ -171,23 +127,27 @@ const launchPads = () => {
                       className={classes.heading}
                       component="h2"
                       variant={
-                        pad.node.frontmatter.type === "droneship" ? "h4" : "h5"
+                        pad.node.frontmatter.type === "droneShip" ? "h4" : "h5"
                       }
                     >
                       {pad.node.frontmatter.title}
                     </Typography>
-                  </Box>
-                  <Box className={classes.shortTextContainer}>
-                    <Typography variant="body1" className={classes.shortText}>
-                      {pad.node.frontmatter.shortText}
+                    <Box className={classes.shortTextContainer}>
+                      <Typography
+                        gutterBottom
+                        variant="body1"
+                        className={classes.shortText}
+                      >
+                        {pad.node.frontmatter.shortText}
+                      </Typography>
                       <Typography
                         align="right"
                         className={classes.shortText}
                         variant="subtitle1"
                       >
-                        Read More
+                        Read More {"\u25ba"}
                       </Typography>
-                    </Typography>
+                    </Box>
                   </Box>
                 </CardContent>
               </BackgroundImage>

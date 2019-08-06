@@ -1,8 +1,8 @@
 ---
-title: "Kennedy Space Center LC39A"
-type: "launchpad"
+title: "Kennedy Space Center 39A"
+type: "launchPad"
 img: "ksc"
-shortText: "In December 2013, NASA and SpaceX were in negotiations for SpaceX to lease Launch Complex 39A at the Kennedy Space Center in Florida, after SpaceX was selected in a multi-company bid process, following NASA's decision in early 2013 to..."
+shortText: "In December 2013, NASA and SpaceX were in negotiations for SpaceX to lease Launch Complex 39A at the Kennedy Space Center in Florida..."
 ---
 
 In December 2013, NASA and SpaceX were in negotiations for SpaceX to lease Launch Complex 39A at the Kennedy Space Center in Florida, after SpaceX was selected in a multi-company bid process, following NASA's decision in early 2013 to lease the unused complex out as part of a bid to reduce annual operation and maintenance costs of unused government facilities.[[14]](https://en.wikipedia.org/wiki/SpaceX_launch_facilities#cite_note-pdo20131213-14) The SpaceX bid was for exclusive use of the launch complex to support their future crewed missions,[[15]](https://en.wikipedia.org/wiki/SpaceX_launch_facilities#cite_note-os20130818-15) but SpaceX said in September 2013 that they are also willing to support a multi-user arrangement for LC-39A,[[16]](https://en.wikipedia.org/wiki/SpaceX_launch_facilities#cite_note-sp20130921-16) and they reiterated that position in December 2013.[[17]](https://en.wikipedia.org/wiki/SpaceX_launch_facilities#cite_note-nbc20131213-17)

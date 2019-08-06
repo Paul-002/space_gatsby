@@ -6,7 +6,7 @@ import { withStyles, MenuList } from "@material-ui/core"
 const styles = () => ({
   list: {
     display: "flex",
-    width: 250,
+    width: "250px",
   },
   styledLink: {
     margin: "20px",

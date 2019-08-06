@@ -1,8 +1,8 @@
 ---
 title: "Vandenberg Base SLC-4"
-type: "launchpad"
+type: "launchPad"
 img: "vandenberg"
-shortText: "Space Launch Complex 4 (SLC-4) is a launch and landing site at Vandenberg Air Force Base with two pads, both of which are used by SpaceX for Falcon 9 launch operations; operating as Landing Zone 4 (LZ-4) for SpaceX landings."
+shortText: "Space Launch Complex 4 (SLC-4) is a launch and landing site at Vandenberg Air Force Base with two pads, both of which are used by SpaceX for Falcon..."
 ---
 
 **Space Launch Complex 4** (**SLC-4**) is a launch and landing site at Vandenberg Air Force Base with two pads, both of which are used by SpaceX for Falcon 9 launch operations, operating as **Landing Zone 4** (**LZ-4**) for SpaceX landings.

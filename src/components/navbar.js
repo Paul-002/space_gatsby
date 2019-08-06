@@ -41,7 +41,6 @@ const styles = theme => ({
 
 const NavBar = props => {
   const { classes } = props
-
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBarCustomColor}>

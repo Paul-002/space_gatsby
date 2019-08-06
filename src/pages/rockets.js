@@ -1,60 +1,13 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
-import { Typography, Box, Grid, ButtonBase } from "@material-ui/core"
-import { useStaticQuery, graphql } from "gatsby"
+import { Typography, Box } from "@material-ui/core"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
-import { Link } from "gatsby"
-
-const useStyles = makeStyles(() => ({
-  shortTextContainer: {
-    backgroundColor: "rgba(34,39,43,0.8)",
-    padding: "15px",
-    margin: "30px 0",
-    minWidth: "250px",
-    borderLeft: "5px solid rgba(255,255,255,0.6)",
-    borderRadius: "2px",
-  },
-  shortText: {
-    color: "#FFFFFF",
-  },
-  background: {
-    height: "300px",
-  },
-  content: {
-    color: "#FFFFFF",
-  },
-  heading: {
-    position: "absolute",
-    color: "#FFFFFF",
-    top: "-40px",
-    left: "5px",
-    width: "300px",
-  },
-  card: {
-    textDecoration: "none",
-    margin: "10px",
-  },
-  shape: {
-    position: "relative",
-    borderTop: "50px solid rgba(34,39,43,0.8)",
-    borderBottom: "solid transparent",
-    borderLeft: "5px transparent",
-    borderRight: "70px solid transparent",
-    backgroundColor: "rgba(255,255,255,0.4)",
-    borderRadius: "2px",
-    height: "1px",
-    width: "25%",
-    minWidth: "200px",
-  },
-}))
+import classes from "../styles/contentBox.module.css"
 
 const Rockets = () => {
-  const classes = useStyles()
-
   const data = useStaticQuery(graphql`
     query {
       falcon1: file(relativePath: { eq: "falcon1.jpg" }) {
@@ -129,15 +82,19 @@ const Rockets = () => {
                     {rocket.node.frontmatter.title}
                   </Typography>
                   <Box className={classes.shortTextContainer}>
-                    <Typography variant="body1" className={classes.shortText}>
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      className={classes.shortText}
+                    >
                       {rocket.node.frontmatter.shortText}
-                      <Typography
-                        align="right"
-                        className={classes.shortText}
-                        variant="subtitle1"
-                      >
-                        Read More
-                      </Typography>
+                    </Typography>
+                    <Typography
+                      align="right"
+                      className={classes.shortText}
+                      variant="subtitle1"
+                    >
+                      Read more {"\u25ba"}
                     </Typography>
                   </Box>
                 </Box>

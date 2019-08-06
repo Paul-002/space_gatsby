@@ -1,8 +1,8 @@
 ---
 title: "Boca Chica Launch Site"
-type: "launchpad"
+type: "launchPad"
 img: "bocaChica"
-shortText: "The SpaceX South Texas Launch Site is a spaceport and test site being built at Boca Chica Village near Brownsville, Texas, for the private use of Space Exploration Technologies Corporation (SpaceX)."
+shortText: "The SpaceX South Texas Launch Site is a spaceport and test site being built at Boca Chica Village near Brownsville, Texas..."
 ---
 
 The **SpaceX South Texas Launch Site** is a spaceport and test site being built at **Boca Chica Village** near Brownsville, Texas, for the private use of Space Exploration Technologies Corporation (SpaceX).[[4]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-spacex_about-4)[[5]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-msa20140804-5)[[6]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-shotwell201503317-6) Its stated purpose is "to provide SpaceX an exclusive launch site that would allow the company to accommodate its launch manifest and meet tight launch windows."[[7]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-faa201304v1-7) The launch site was originally intended to support launches of the Falcon 9 and Falcon Heavy launch vehicles as well as "a variety of reusable suborbital launch vehicles",[[7]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-faa201304v1-7) but in 2018, SpaceX announced a change of plans, stating that the site would be used exclusively for BFR.[[8]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-201805pressConference-8) SpaceX CEO Elon Musk indicated in 2014 that he expected "commercial astronauts, private astronauts, to be departing from South Texas,"[[1]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-sn20140922-1) and he foresaw launching spacecraft to Mars from there.[[9]](https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site#cite_note-bh20140927-9)
