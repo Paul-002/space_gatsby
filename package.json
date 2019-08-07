@@ -26,6 +26,7 @@
     "gatsby-source-graphql": "^2.1.2",
     "gatsby-transformer-remark": "^2.6.9",
     "gatsby-transformer-sharp": "^2.2.4",
+    "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-countdown-now": "^2.1.1",
@@ -35,7 +36,6 @@
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.0",
     "prettier": "^1.18.2"
   },
   "keywords": [
