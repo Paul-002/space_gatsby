@@ -14,8 +14,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <Grid container>
-        <Grid sm={2} xs={1}></Grid>
-        <Grid sm={8} xs={10}>
+        <Grid item={true} sm={2} xs={1}></Grid>
+        <Grid item={true} sm={8} xs={10}>
           <Typography gutterBottom variant="h2" />
           <Typography gutterBottom variant="h3">
             {post.frontmatter.title.toUpperCase()}
@@ -39,7 +39,7 @@ export default ({ data }) => {
           </BackButton>
           <Typography variant="h2" />
         </Grid>
-        <Grid sm={2} xs={1}></Grid>
+        <Grid item={true} sm={2} xs={1}></Grid>
       </Grid>
     </Layout>
   )
