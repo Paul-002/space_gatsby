@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{293:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),c=a(16),l=a(57);t.default=function(){return r.a.createElement(c.a,null,r.a.createElement(l.a,{gutterBottom:!0,variant:"h1"}," "),r.a.createElement(l.a,{variant:"h6"},"This page is currently under construction... ",r.a.createElement("br",null),"Please check back later :)"))}}}]);
-//# sourceMappingURL=component---src-pages-past-launches-js-40de48dd436087026d02.js.map
