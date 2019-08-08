@@ -1,13 +1,26 @@
 const path = require(`path`)
 
 module.exports = {
-  pathPrefix: "/space-gatsby",
+  pathPrefix: "/space_gatsby",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Space Gatsby powered by graphQL API`,
+    description: `SpaceX example website`,
+    author: `Pawel Gasiorowski`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `space_gatsby`,
+        short_name: `gatsby`,
+        start_url: `/`,
+        background_color: `#181C1F`,
+        theme_color: `#181C1F`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -38,7 +51,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        path: path.join(__dirname, `src`, `pages`),
       },
     },
     {
@@ -48,21 +61,18 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: [],
+        plugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow noopener noreferrer",
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-      },
-    },
   ],
 }

@@ -17,7 +17,7 @@ export default ({ data }) => {
         <Grid item={true} sm={2} xs={1}></Grid>
         <Grid item={true} sm={8} xs={10}>
           <Typography gutterBottom variant="h2" />
-          <Typography gutterBottom variant="h3">
+          <Typography gutterBottom variant="h4">
             {post.frontmatter.title.toUpperCase()}
           </Typography>
           <Typography

@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid"
 import Navbar from "./navBar"
 import SideDrawer from "./sideDrawer"
 import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
 
 class Layout extends Component {
   state = {
@@ -20,6 +21,23 @@ class Layout extends Component {
   render() {
     return (
       <>
+        <Helmet
+          title="Space Gatsby"
+          meta={[
+            {
+              name: "description",
+              content:
+                "Looking for SpaceX upcoming launch? You can find schedule of starts on this website!",
+            },
+            {
+              name: "keywords",
+              content:
+                "SpaceX, gatsby, rockets, space, spaceships, graphQL, pwa",
+            },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
         <Grid container>
           <Navbar showDrawer={this.showDrawerHandler} />
           <SideDrawer
