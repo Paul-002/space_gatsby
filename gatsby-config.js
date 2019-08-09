@@ -11,12 +11,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `space_gatsby`,
-        short_name: `gatsby`,
-        start_url: `/`,
+        name: `Space_Gatsby`,
+        short_name: `Space Gatsby`,
+        start_url: `/space_gatsby/`,
         background_color: `#181C1F`,
         theme_color: `#181C1F`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/icon.png`,
       },
     },
