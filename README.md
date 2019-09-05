@@ -7,7 +7,7 @@ The golden times of spaceflight and the first landing of a man on the Moon are l
 - [General info](#General-info)
 - [Technologies](#technologies)
 - [Features](#features)
-- [Performance](#performance)
+- [Screenshots](#screenshots)
 - [Setup](#setup)
 - [Status](#status)
 - [Inspiration](#Inspiration)
@@ -51,6 +51,24 @@ Screenshot from Chrome dev tools audit.
 <p align="center">
   <img alt="audit" src="./src/images/audit.png">
 </p>
+
+## Screenshots
+
+|                  Mobile shortcut icon                   |                   Main screen notification                   |
+| :-----------------------------------------------------: | :----------------------------------------------------------: |
+| ![Mobile shortcut icon](./src/images/readmeImg/app.jpg) | ![Main screen notification](./src/images/readmeImg/main.jpg) |
+
+&nbsp;
+
+|                   Home screen                   |                      Navigation drawer                      |
+| :---------------------------------------------: | :---------------------------------------------------------: |
+| ![Home screen](./src/images/readmeImg/home.jpg) | ![Navigation drawer](./src/images/readmeImg/sideDrawer.jpg) |
+
+&nbsp;
+
+|                    Rockets page                     |                  Mission details page                  |
+| :-------------------------------------------------: | :----------------------------------------------------: |
+| ![Rockets page](./src/images/readmeImg/rockets.jpg) | ![Mission details](./src/images/readmeImg/details.jpg) |
 
 ## Setup
 
