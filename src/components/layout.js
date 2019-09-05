@@ -27,7 +27,7 @@ class Layout extends Component {
             {
               name: "description",
               content:
-                "Looking for SpaceX upcoming launch? You can find schedule of starts on this website!",
+                "Looking for SpaceX upcoming launch? You couldn't find a better place on Space Gatsby, you'll find everything you need!",
             },
             {
               name: "keywords",

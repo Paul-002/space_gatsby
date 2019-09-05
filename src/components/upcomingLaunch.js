@@ -40,6 +40,11 @@ const StyledPaperContainer = withStyles({
     width: "95%",
     margin: "0 auto",
   },
+  "@media (max-width: 600px)": {
+    root: {
+      marginTop: "10px",
+    },
+  },
 })(Paper)
 
 const StyledBoxContainer = withStyles({
@@ -47,7 +52,12 @@ const StyledBoxContainer = withStyles({
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
-    marginTop: "40px",
+    marginTop: "30px",
+  },
+  "@media (max-width: 600px)": {
+    root: {
+      marginTop: "20px",
+    },
   },
 })(Box)
 
@@ -101,7 +111,12 @@ const TimerBox = withStyles({
   root: {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "30px",
+    marginBottom: "20px",
+  },
+  "@media (max-width: 600px)": {
+    root: {
+      marginTop: "20px",
+    },
   },
 })(Box)
 
@@ -196,6 +211,7 @@ const UpcomingLaunch = () => {
           </Box>
           <Button className={classes.button} color="primary" variant="outlined">
             <Typography
+              style={{ width: "100%", height: "100%" }}
               className={classes.link}
               color="primary"
               variant="h6"

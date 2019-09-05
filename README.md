@@ -1,6 +1,6 @@
 <h1 align="center">Space Gatsby</h1>
 
-The golden times of spaceflight and the first landing of a man on the moon are long behind us. With the development of technology, uneconomical and outdated shuttles no longer meet their goals. Market demand for new constructions and growing interest in the space sector, and in particular the mining industry on other planets of the solar system, has created new goals in the astronomical race. Many private companies have partnered with NASA and in particular one...
+The golden times of spaceflight and the first landing of a man on the Moon are long behind us. With the development of technology, uneconomical and outdated shuttles no longer meet their goals. Market demand for new constructions and growing interest in the space sector, and in particular the mining industry on other planets of the Solar System, has created new goals in the astronomical race. In recent times, many private companies have partnered with NASA and in particular one...
 
 ## About project :clipboard:
 
@@ -46,10 +46,10 @@ In progress
 
 ## Performance
 
-### Screenshot of the audit carried out in chrome dev tools.
+Screenshot from Chrome dev tools audit.
 
 <p align="center">
-    <img alt="audit" width="938" height="286" src="./src/images/audit.png">
+  <img alt="audit" src="./src/images/audit.png">
 </p>
 
 ## Setup
@@ -74,7 +74,7 @@ All commands need to be performed in either PowerShell or a Command Shell.
 
 ### 3. Enter the directory
 
-`cd space_gatsby/`
+`cd space_gatsby`
 
 ### 4. Install all dependencies
 

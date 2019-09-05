@@ -17,7 +17,7 @@ module.exports = {
         background_color: `#181C1F`,
         theme_color: `#181C1F`,
         display: `standalone`,
-        icon: `src/images/icon.png`,
+        icon: `src/images/icon-rocket.png`,
       },
     },
     `gatsby-plugin-offline`,
